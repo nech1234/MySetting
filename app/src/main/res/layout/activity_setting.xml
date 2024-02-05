@@ -1,349 +1,396 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
     tools:context=".SettingActivity">
 
-    <TextView
-        android:id="@+id/setting_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="설정"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/setting_back_btn"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/btn_back"
-        app:layout_constraintBottom_toBottomOf="@id/setting_name_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/setting_name_tv" />
-
-    <TextView
-        android:id="@+id/setting_page_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:text="계정 및 설정관리 \n페이지"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/setting_back_btn"
-        app:layout_constraintTop_toBottomOf="@id/setting_back_btn" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/setting_profile_cl"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/et_background"
-        app:layout_constraintTop_toBottomOf="@id/setting_page_tv">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/setting_profile_iv"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/default_profile_picture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/setting_profile_nick_tv"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/setting_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="설정"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/setting_back_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/setting_back_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="27dp"
+                android:src="@drawable/btn_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/setting_name_tv" />
+
+            <TextView
+                android:id="@+id/setting_page_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="계정 및 설정관리 \n페이지"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/setting_back_btn"
+                app:layout_constraintTop_toBottomOf="@id/setting_back_btn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setting_profile_cl"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_background"
+            app:layout_constraintTop_toBottomOf="@id/setting_page_tv">
+
+            <ImageView
+                android:id="@+id/setting_profile_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/default_profile_picture"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_profile_nick_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nick Name"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@id/setting_profile_iv"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_profile_user_manage_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="계정관리"
+                android:textSize="15dp"
+                app:layout_constraintStart_toEndOf="@id/setting_profile_iv"
+                app:layout_constraintTop_toBottomOf="@id/setting_profile_nick_tv" />
+
+            <ImageView
+                android:id="@+id/setting_profile_next_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/btn_arrow_more"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setting_language_cl"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nick Name"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/et_background"
+            app:layout_constraintTop_toBottomOf="@id/setting_profile_cl">
+
+            <ImageView
+                android:id="@+id/setting_language_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/img_language"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_language_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="언어"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/setting_language_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_language_select_korean_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="한국어"
+                android:textSize="17dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/setting_language_next_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_language_select_english_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:textSize="17dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/setting_language_next_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+            <ImageView
+                android:id="@+id/setting_language_next_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="showLanguageMenu"
+                android:src="@drawable/btn_arrow_more"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setting_alarm_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background"
+            app:layout_constraintTop_toBottomOf="@id/setting_language_cl">
+
+            <ImageView
+                android:id="@+id/setting_alarm_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/img_alarm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_alarm_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수업 알람"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/setting_alarm_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+            <ImageView
+                android:id="@+id/setting_alarm_off_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/btn_toggle_off"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/setting_alarm_on_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/btn_toggle_on"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setting_auto_recode_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background"
+            app:layout_constraintTop_toBottomOf="@id/setting_alarm_cl">
+
+            <ImageView
+                android:id="@+id/setting_auto_recode_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/img_recoder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_auto_recode_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수업 시간에 노트 펼칠시, 녹음 자동 실행"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/setting_auto_recode_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/setting_auto_recode_off_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/btn_toggle_off"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/setting_auto_recode_on_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/btn_toggle_on"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setting_directory_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background"
+            app:layout_constraintTop_toBottomOf="@id/setting_auto_recode_cl">
+
+            <ImageView
+                android:id="@+id/setting_directory_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/img_recoder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_directory_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="파일 저장 경로"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/setting_directory_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_directory_select_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="Android/Data/Notation.Campusnote.com"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/setting_directory_next_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+            <ImageView
+                android:id="@+id/setting_directory_next_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/btn_arrow_more"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setting_subscribe_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background"
+            app:layout_constraintTop_toBottomOf="@id/setting_directory_cl">
+
+            <ImageView
+                android:id="@+id/setting_subscribe_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/img_subscribe"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_subscribe_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="구독 관리"
+                android:textSize="17dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/setting_subscribe_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/setting_directory_subscribe_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="무료 플랜"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/setting_subscribe_next_iv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+            <ImageView
+                android:id="@+id/setting_subscribe_next_iv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/btn_arrow_more"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/setting_reset_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/sign_up_next_btn_background"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="설정 초기화"
+            android:textColor="#FCFCFC"
             android:textSize="20dp"
-            app:layout_constraintStart_toEndOf="@id/setting_profile_iv"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_profile_user_manage_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="계정관리"
-            android:textSize="15dp"
-            app:layout_constraintStart_toEndOf="@id/setting_profile_iv"
-            app:layout_constraintTop_toBottomOf="@id/setting_profile_nick_tv" />
-
-        <ImageView
-            android:id="@+id/setting_profile_next_iv"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/btn_arrow_more"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/setting_language_cl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/et_background"
-        app:layout_constraintTop_toBottomOf="@id/setting_profile_cl">
-
-        <ImageView
-            android:id="@+id/setting_language_iv"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/default_profile_picture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_language_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="언어"
-            android:textSize="20dp"
-            app:layout_constraintStart_toEndOf="@id/setting_language_iv"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_language_select_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="한국어"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toStartOf="@id/setting_language_next_iv"
-            tools:ignore="MissingConstraints" />
-
-
-        <ImageView
-            android:id="@+id/setting_language_next_iv"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/btn_arrow_more"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/setting_alarm_cl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/et_background"
-        app:layout_constraintTop_toBottomOf="@id/setting_language_cl">
-
-        <ImageView
-            android:id="@+id/setting_alarm_iv"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/default_profile_picture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_alarm_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="수업 알람"
-            android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@id/setting_alarm_iv"
-            tools:ignore="MissingConstraints" />
-
-
-        <ImageView
-            android:id="@+id/setting_alarm_off_iv"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/btn_toggle_off"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/setting_alarm_on_iv"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/btn_toggle_on"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/setting_auto_recode_cl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/et_background"
-        app:layout_constraintTop_toBottomOf="@id/setting_alarm_cl">
-
-        <ImageView
-            android:id="@+id/setting_auto_recode_iv"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/default_profile_picture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_auto_recode_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="수업 시간에 노트 펼칠시, 녹음 자동 실행"
-            android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@id/setting_auto_recode_iv"
-            tools:ignore="MissingConstraints" />
-
-        <ImageView
-            android:id="@+id/setting_auto_recode_off_iv"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/btn_toggle_off"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/setting_auto_recode_on_iv"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/btn_toggle_on"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/setting_directory_cl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/et_background"
-        app:layout_constraintTop_toBottomOf="@id/setting_auto_recode_cl">
-
-        <ImageView
-            android:id="@+id/setting_directory_iv"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/default_profile_picture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_directory_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="파일 저장 경로"
-            android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@id/setting_directory_iv"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_directory_select_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Android/Data/Notation.Campusnote.com"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@id/setting_directory_next_iv"
-            tools:ignore="MissingConstraints" />
-
-
-        <ImageView
-            android:id="@+id/setting_directory_next_iv"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/btn_arrow_more"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/setting_subscribe_cl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/et_background"
-        app:layout_constraintTop_toBottomOf="@id/setting_directory_cl">
-
-        <ImageView
-            android:id="@+id/setting_subscribe_iv"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/default_profile_picture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_subscribe_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="구독 관리"
-            android:textSize="12dp"
-            app:layout_constraintStart_toEndOf="@id/setting_subscribe_iv"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/setting_directory_subscribe_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="무료 플랜"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@id/setting_subscribe_next_iv"
-            tools:ignore="MissingConstraints" />
-
-
-        <ImageView
-            android:id="@+id/setting_subscribe_next_iv"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/btn_arrow_more"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/setting_reset_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/sign_up_next_btn_background"
-        android:gravity="center"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:text="설정 초기화"
-        android:textColor="#FCFCFC"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
