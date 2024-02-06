@@ -1,6 +1,7 @@
 package com.example.mysetting
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
@@ -9,6 +10,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.ContextCompat
 import com.example.mysetting.databinding.ActivitySettingBinding
 import java.util.Locale
 
@@ -27,30 +30,34 @@ class SettingActivity : AppCompatActivity() {
             // 계정관리로 이동
         }
 
-        binding.settingAutoRecodeOffIv.setOnClickListener {
-            binding.settingAutoRecodeOffIv.visibility = View.GONE
-            binding.settingAutoRecodeOnIv.visibility = View.VISIBLE
-            // 녹음 설정 코드
-        }
-        binding.settingAutoRecodeOnIv.setOnClickListener {
-            binding.settingAutoRecodeOffIv.visibility = View.VISIBLE
-            binding.settingAutoRecodeOnIv.visibility = View.GONE
-            // 녹음 설정 코드
-        }
-        binding.settingAlarmOffIv.setOnClickListener {
-            binding.settingAlarmOffIv.visibility = View.GONE
-            binding.settingAlarmOnIv.visibility = View.VISIBLE
-            // 알람 설정 코드
-        }
-        binding.settingAlarmOnIv.setOnClickListener {
-            binding.settingAlarmOffIv.visibility = View.VISIBLE
-            binding.settingAlarmOnIv.visibility = View.GONE
-            // 알람 설정 코드
-        }
+
         binding.settingLanguageNextIv.setOnClickListener {
             Log.d("click", "Setting Language Next Clicked")
             showLanguageMenu(it)
         }
+
+        binding.settingAlarmSc.setOnCheckedChangeListener { _, isChecked ->
+            val trackColorAlarm = if (isChecked) {
+                ContextCompat.getColor(binding.settingAlarmSc.context, R.color.toggle_on)
+                // 수업 알람 on일때 함수
+            } else {
+                ContextCompat.getColor(binding.settingAlarmSc.context, R.color.toggle_off)
+                // 수업 알람 off일때 함수
+            }
+            binding.settingAlarmSc.trackTintList = ColorStateList.valueOf(trackColorAlarm)
+        }
+
+        binding.settingAutoRecodeSc.setOnCheckedChangeListener { _, isChecked ->
+            val trackColorRecode = if (isChecked) {
+                ContextCompat.getColor(binding.settingAutoRecodeSc.context, R.color.toggle_on)
+                //자동녹음 기능 on일때 함수
+            } else {
+                ContextCompat.getColor(binding.settingAutoRecodeSc.context, R.color.toggle_off)
+                //자동녹음 기능 off일때 함수
+            }
+            binding.settingAutoRecodeSc.trackTintList = ColorStateList.valueOf(trackColorRecode)
+        }
+
         binding.settingSubscribeNextIv.setOnClickListener {
             // 구독 설정 코드
         }

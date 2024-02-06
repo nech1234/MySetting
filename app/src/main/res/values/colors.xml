@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="toggle_on">#3BC1C6</color>
+    <color name="toggle_off">#BEBEBE</color>
 </resources>
